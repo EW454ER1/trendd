@@ -3,3 +3,7 @@ pandas
 ta
 numpy
 python-telegram-bot==13.15
+schedule
+time
+requests
+typing
