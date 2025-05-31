@@ -6,6 +6,7 @@ import pandas as pd
 import ta
 import numpy as np
 from typing import List, Optional
+import os
 
 # Replace these with your actual API Keys
 binance_api_key = 'Q7EmDaDslId3SjDP8xpInWY9pqidecf58vScj5PxmNywtxbCW8JUZEJYUOW6TPhX'
@@ -419,3 +420,4 @@ schedule.every().hour.at(":45").do(fetch_and_check_all_symbols, exchange=binance
 while True:
     schedule.run_pending()
     time.sleep(300)
+app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
