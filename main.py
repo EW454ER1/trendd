@@ -420,4 +420,7 @@ schedule.every().hour.at(":45").do(fetch_and_check_all_symbols, exchange=binance
 while True:
     schedule.run_pending()
     time.sleep(300)
-app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
+if __name__ == '__main__':
+    threading.Thread(target=start_bot, daemon=True).start()
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
+
